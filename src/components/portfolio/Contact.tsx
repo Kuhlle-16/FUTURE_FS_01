@@ -24,7 +24,7 @@ export const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const r = schema.safeParse(form);
     if (!r.success) {
@@ -36,12 +36,33 @@ export const Contact = () => {
       return;
     }
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/kuhlebikitsha@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          _subject: `New portfolio message from ${form.name}`,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      if (!res.ok) throw new Error("Failed");
       toast({ title: "Message sent ✓", description: "I'll get back to you shortly." });
       setForm({ name: "", email: "", message: "" });
-    }, 800);
+    } catch {
+      toast({
+        title: "Couldn't send message",
+        description: "Please try again or email me directly at kuhlebikitsha@gmail.com.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
+
 
   return (
     <section id="contact" className="py-24 relative">
