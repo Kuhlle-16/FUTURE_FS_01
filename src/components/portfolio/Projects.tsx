@@ -78,7 +78,8 @@ const projects: Project[] = [
     challenges:
       "Role-based access, dashboard logic, scalable data structure for multi-vendor commerce.",
     deployment: "Azure Static Web Apps · Firebase",
-    category: ["Full Stack", "Dashboards", "School Projects"],
+    live: "https://artisan-avenue.netlify.app/",
+    category: ["Full Stack", "Dashboards", "School Projects", "Live Projects"],
     icon: ShoppingBag,
     accent: "secondary",
   },
@@ -89,7 +90,7 @@ const projects: Project[] = [
     type: "Fitness Tracking Web App",
     summary:
       "Fitness tracking web app focused on progressive overload, workout history, nutrition tracking, and performance analytics.",
-    tech: ["HTML", "CSS", "JavaScript", "Firebase Auth", "Firestore", "Netlify"],
+    tech: ["React", "Vite", "TypeScript", "Tailwind CSS", "shadcn/ui", "Supabase"],
     features: [
       "Progressive overload tracker",
       "Workout history",
@@ -101,8 +102,9 @@ const projects: Project[] = [
     team: "Solo",
     role: "Full-Stack Developer — design, frontend, backend, deployment",
     challenges: "Designing flexible workout schemas and analytics over time-series data.",
-    deployment: "Netlify · Firebase",
-    live: "https://fit-sync-gym.netlify.app/",
+    deployment: "Netlify · Supabase",
+    live: "https://fit-sync-gym-tracker.netlify.app/",
+    code: "https://github.com/Kuhlle-16/FitSync",
     category: ["Full Stack", "Live Projects"],
     icon: Dumbbell,
     accent: "primary",

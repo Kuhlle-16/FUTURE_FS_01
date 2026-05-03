@@ -37,32 +37,39 @@ export const Contact = () => {
     }
     setLoading(true);
     try {
+      const data = new FormData();
+      data.append("name", form.name);
+      data.append("email", form.email);
+      data.append("_replyto", form.email);
+      data.append("message", form.message);
+      data.append("_subject", `New portfolio message from ${form.name}`);
+      data.append("_template", "table");
+      data.append("_captcha", "false");
+
       const res = await fetch("https://formsubmit.co/ajax/kuhlebikitsha@gmail.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          message: form.message,
-          _subject: `New portfolio message from ${form.name}`,
-          _template: "table",
-          _captcha: "false",
-        }),
+        headers: { Accept: "application/json" },
+        body: data,
       });
-      if (!res.ok) throw new Error("Failed");
+
+      if (!res.ok) {
+        const errorText = await res.text().catch(() => "");
+        throw new Error(errorText || `HTTP ${res.status}`);
+      }
+
       toast({ title: "Message sent ✓", description: "I'll get back to you shortly." });
       setForm({ name: "", email: "", message: "" });
-    } catch {
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Unable to send your message.";
       toast({
         title: "Couldn't send message",
-        description: "Please try again or email me directly at kuhlebikitsha@gmail.com.",
+        description: `Please try again or email me directly at kuhlebikitsha@gmail.com. (${message})`,
         variant: "destructive",
       });
     } finally {
       setLoading(false);
     }
   };
-
 
   return (
     <section id="contact" className="py-24 relative">

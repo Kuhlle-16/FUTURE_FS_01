@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/dialog";
 
 export const ActiveProject = () => {
-  const tech = ["HTML", "CSS", "JavaScript", "Firebase Auth", "Firestore", "GitHub", "Netlify"];
+  const tech = ["React", "Vite", "TypeScript", "Tailwind CSS", "shadcn/ui", "Supabase", "Netlify"];
   const [open, setOpen] = useState(false);
 
   const features = [
@@ -64,11 +64,16 @@ export const ActiveProject = () => {
 
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button asChild variant="hero">
-                  <a href="https://fit-sync-gym.netlify.app/" target="_blank" rel="noreferrer">
+                  <a href="https://fit-sync-gym-tracker.netlify.app/" target="_blank" rel="noreferrer">
                     Live Demo <ExternalLink className="h-4 w-4" />
                   </a>
                 </Button>
-                <Button variant="glass" onClick={() => setOpen(true)}>
+                <Button asChild variant="glass">
+                  <a href="https://github.com/Kuhlle-16/FitSync" target="_blank" rel="noreferrer">
+                    View Code <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
+                <Button variant="outline" onClick={() => setOpen(true)}>
                   View Details
                 </Button>
               </div>
@@ -119,7 +124,7 @@ export const ActiveProject = () => {
             </div>
             <div className="glass rounded-lg p-3">
               <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Deployment</div>
-              <div className="text-sm font-medium">Netlify · Firebase</div>
+              <div className="text-sm font-medium">Netlify · Supabase</div>
             </div>
           </div>
 
@@ -161,8 +166,13 @@ export const ActiveProject = () => {
 
           <div className="flex flex-wrap gap-2 pt-5 border-t border-border mt-6">
             <Button asChild variant="hero">
-              <a href="https://fit-sync-gym.netlify.app/" target="_blank" rel="noreferrer">
+              <a href="https://fit-sync-gym-tracker.netlify.app/" target="_blank" rel="noreferrer">
                 Live Site <ExternalLink className="h-4 w-4" />
+              </a>
+            </Button>
+            <Button asChild variant="outline">
+              <a href="https://github.com/Kuhlle-16/FitSync" target="_blank" rel="noreferrer">
+                Code <ExternalLink className="h-4 w-4" />
               </a>
             </Button>
           </div>

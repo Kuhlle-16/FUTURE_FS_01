@@ -1,4 +1,4 @@
-import { ArrowRight, Download, Github, Linkedin, Mail, Sparkles } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TerminalWindow } from "./TerminalWindow";
 
@@ -58,9 +58,6 @@ export const Hero = () => {
           <div className="flex flex-wrap gap-3 pt-2">
             <Button asChild variant="hero" size="lg">
               <a href="#contact">Hire Me <ArrowRight className="h-4 w-4" /></a>
-            </Button>
-            <Button asChild variant="glass" size="lg">
-              <a href="/cv.pdf" download><Download className="h-4 w-4" /> Download CV</a>
             </Button>
             <Button asChild variant="outline" size="lg">
               <a href="#projects">View Projects</a>
