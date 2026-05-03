@@ -29,7 +29,3 @@ GitHub repository: https://github.com/Kuhlle-16/FUTURE_FS_01.git
 **Features**
 - Responsive design optimized for desktop and mobile devices
 - Clean and structured layout for showcasing projects and skills
-Contact form with external form handling (no backend required)
-Fast performance using Vite build tooling
-Reusable UI components with consistent styling
->>>>>>> 6bd2c213f4ed90fd0e6b26dbf61b327c452149f0
