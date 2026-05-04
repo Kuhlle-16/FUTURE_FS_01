@@ -10,6 +10,8 @@ import { Interests } from "@/components/portfolio/Interests";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { BackToTop } from "@/components/portfolio/BackToTop";
+import { About } from "@/components/portfolio/About";
+
 
 const Index = () => {
   return (
@@ -17,6 +19,7 @@ const Index = () => {
       <ScrollProgress />
       <Navbar />
       <Hero />
+      <About />
       <Experience />
       <Skills />
       <ActiveProject />
